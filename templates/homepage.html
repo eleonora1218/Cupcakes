@@ -1,0 +1,48 @@
+{% extends 'base.html' %} 
+{% block title %} Cupcakes {% endblock %} 
+
+{% block content %}
+<h2>Cupcake flavors</h2>
+
+{% for c in cupcake %}
+<ul>
+    <li>
+    <img src="{{c.img()}}" class="cupcake-img"/>
+    <br>
+    Flavor: {{c.flavor}} 
+    <br>
+    Size: {{c.size}} 
+    <br>
+    Rating: {{c.rating}}
+    </li>
+</ul>
+{% endfor %}
+
+<h2>Add a new cupcake</h2>
+<form id="new-cupcake-form">
+    <div>
+      <label for="form-flavor">Flavor: </label>
+      <input name="flavor" id="form-flavor">
+    </div>
+  
+    <div>
+      <label for="form-size">Size: </label>
+      <input name="size" id="form-size">
+    </div>
+  
+    <div>
+      <label for="form-rating">Rating: </label>
+      <input type="number" name="rating" id="form-rating">
+    </div>
+  
+    <div>
+      <label for="form-image">Image: </label>
+      <input name="image" id="form-image">
+    </div>
+  
+    <button>Add!</button>
+  </form>
+
+
+{% endblock %} 
+
